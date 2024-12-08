@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
+import { ArticleDialogComponent } from '../article-dialog/article-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import { ApiService } from 'src/app/api.service';
-import { ArticleDialogComponent } from '../article-dialog/article-dialog.component';
 import { map } from 'rxjs';
 
 @Component({
-  selector: 'app-article',
-  templateUrl: './article.component.html',
-  styleUrls: ['./article.component.css']
+  selector: 'app-published-article',
+  templateUrl: './published-article.component.html',
+  styleUrls: ['./published-article.component.css']
 })
-export class ArticleComponent implements OnInit {
-searchQuery: any;
+export class PublishedArticleComponent implements OnInit {
+  searchQuery: any;
   constructor(public dialog: MatDialog,private api:ApiService) {}
   get_url='posts';
   articles: any[] = [];
@@ -32,13 +32,8 @@ searchQuery: any;
             this.articles[index] = result;
             this.api.post(this.articles)
           }
-        } else {
-          this.articles.unshift(result);
-          this.api.post(this.articles)
         }
       }
     });
   }
-
-
 }

@@ -8,13 +8,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { ArticleComponent } from './components/article/article.component';
 import { MaterialModule } from './material/material.module';
 import { FormsModule } from '@angular/forms';
+import { ArticleDialogComponent } from './components/article-dialog/article-dialog.component';
 import { SearchPipe } from './pipe/search.pipe';
+import { PublishedArticleComponent } from './components/published-article/published-article.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ArticleComponent,
-    SearchPipe
+    ArticleDialogComponent,
+    SearchPipe,
+    PublishedArticleComponent
   ],
   imports: [
     BrowserModule,

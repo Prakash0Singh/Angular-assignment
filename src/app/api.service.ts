@@ -1,19 +1,22 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import { Subject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
 
   constructor(private http:HttpClient) { }
-  baseUrl='https://jsonplaceholder.typicode.com';
 
-  post(url:string,data={}){
-    return this.http.post(`${this.baseUrl}${url}`,data)
+  post(data:any){
+    localStorage.setItem('datalist',JSON.stringify(data))
   }
 
-  get(url:string){
-    return this.http.get(`${this.baseUrl}/${url}`)
+  get(){
+    return JSON.parse(localStorage.getItem('datalist')||'')
   }
+
+  
+  
   
 }

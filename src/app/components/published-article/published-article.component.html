@@ -1,0 +1,16 @@
+<div class="article-page">    
+    <div class="search">
+      <input matInput [(ngModel)]="searchQuery" placeholder="Search Articles" />
+    </div>
+  
+    <div class="article-list">
+      <div *ngFor="let article of articles|search:searchQuery" class="article-row">
+        <ng-container *ngIf="article.type=='published'">
+  
+          <p ><span class="fw-bold">Title : </span> {{ article.title|titlecase }}</p>
+          <button mat-button (click)="openDialog(article)">Edit</button>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+  
