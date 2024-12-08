@@ -8,11 +8,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { ArticleComponent } from './components/article/article.component';
 import { MaterialModule } from './material/material.module';
 import { FormsModule } from '@angular/forms';
+import { SearchPipe } from './pipe/search.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     ArticleComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,

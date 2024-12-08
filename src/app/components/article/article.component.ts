@@ -8,6 +8,7 @@ import { ApiService } from 'src/app/api.service';
   styleUrls: ['./article.component.css']
 })
 export class ArticleComponent implements OnInit {
+searchQuery: any;
   constructor(public dialog: MatDialog,private api:ApiService) {}
   get_url='posts';
   articles: any[] = [];
@@ -19,8 +20,5 @@ export class ArticleComponent implements OnInit {
       }
     })
   }
-
-
-
 
 }
