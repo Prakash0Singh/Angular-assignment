@@ -21,7 +21,9 @@ searchQuery: any;
 
   openDialog(article?: any): void {
     const dialogRef = this.dialog.open(ArticleDialogComponent, {
-      data: article 
+      data: article ,
+      width: '500px',  
+      height: '400px', 
     });
 
     dialogRef.afterClosed().subscribe(result => {

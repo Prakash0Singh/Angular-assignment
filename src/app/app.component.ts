@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from './api.service';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  constructor(private api:ApiService){}
   
   data= [
     {
@@ -32,7 +34,9 @@ export class AppComponent implements OnInit {
   ];
   
   ngOnInit(): void {
-    localStorage.setItem('datalist',JSON.stringify(this.data))
+    if(!this.api.get()){
+      localStorage.setItem('datalist',JSON.stringify(this.data))
+    }
   }
   
 }

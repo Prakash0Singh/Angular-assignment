@@ -13,7 +13,7 @@ export class ApiService {
   }
 
   get(){
-    return JSON.parse(localStorage.getItem('datalist')||'')
+    return JSON.parse(localStorage.getItem('datalist')||'false')
   }
 
   

@@ -21,6 +21,15 @@ export class ArticleDialogComponent {
   closeDialog(): void {
     this.dialogRef.close();
   }
+  
+  onMinimize(): void {
+    this.dialogRef.updateSize('400px', '300px');
+    this.dialogRef.updatePosition({ bottom: '5px'}); 
+  }
 
+  onMaximize(): void {
+    this.dialogRef.updateSize('80%', '80%'); 
+    this.dialogRef.updatePosition({ top: '10px'});  
+  }
 }
 
