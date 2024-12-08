@@ -6,10 +6,14 @@ import {HttpClient} from '@angular/common/http';
 export class ApiService {
 
   constructor(private http:HttpClient) { }
-  baseUrl='https://ag.bet36.live/api-V2/';
+  baseUrl='https://jsonplaceholder.typicode.com';
 
   post(url:string,data={}){
     return this.http.post(`${this.baseUrl}${url}`,data)
+  }
+
+  get(url:string){
+    return this.http.get(`${this.baseUrl}/${url}`)
   }
   
 }
